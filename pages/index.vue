@@ -46,33 +46,36 @@
       </ul>
     </nav>
 
-    <div v-if="isModalOpen" class="modal d-block">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">{{ isEditing ? 'Edit Task' : 'Add Task' }}</h5>
-            <button type="button" class="btn-close" @click="closeModal"></button>
-          </div>
-          <div class="modal-body">
-            <div class="mb-3">
-              <label for="task-title" class="form-label">Task</label>
-              <input id="task-title" v-model="taskTitle" type="text" class="form-control" required />
-              <span v-if="error" class="text-danger">{{ error }}</span>
+    <div v-if="isModalOpen">
+      <div class="modal-backdrop"></div>
+      <div class="modal d-block">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">{{ isEditing ? 'Edit Task' : 'Add Task' }}</h5>
+              <button type="button" class="btn-close" @click="closeModal"></button>
             </div>
-            <div class="mb-3">
-              <label for="task-status" class="form-label">Status</label>
-              <select id="task-status" v-model="taskStatus" class="form-select">
-                <option>Pending</option>
-                <option>Done</option>
-                <option>In Progress</option>
-              </select>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="task-title" class="form-label">Task</label>
+                <input id="task-title" v-model="taskTitle" type="text" class="form-control" required />
+                <span v-if="error" class="text-danger">{{ error }}</span>
+              </div>
+              <div class="mb-3">
+                <label for="task-status" class="form-label">Status</label>
+                <select id="task-status" v-model="taskStatus" class="form-select">
+                  <option>Pending</option>
+                  <option>Done</option>
+                  <option>In Progress</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-primary me-2" @click="closeModal">Cancel</button>
-            <button type="button" class="btn btn-primary" @click="isEditing ? editTask() : addTask()">
-              {{ isEditing ? 'Save Changes' : 'Add Task' }}
-            </button>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-primary me-2" @click="closeModal">Cancel</button>
+              <button type="button" class="btn btn-primary" @click="isEditing ? editTask() : addTask()">
+                {{ isEditing ? 'Save Changes' : 'Add Task' }}
+              </button>
+            </div>
           </div>
         </div>
       </div>
