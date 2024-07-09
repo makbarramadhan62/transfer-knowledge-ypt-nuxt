@@ -1,27 +1,32 @@
-export default {
-  buildModules: ["@nuxtjs/style-resources"],
+// https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from 'nuxt/config'
+
+export default defineNuxtConfig({
+  compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-
-  styleResources: {
-    scss: ["@/assets/scss/_variables.scss"],
-  },
-
-  css: ["bootstrap/dist/css/bootstrap.css", "@/assets/scss/app.scss"],
-
-  build: {
-    loaders: {
-      scss: {
-        implementation: require("sass"),
+  css: [
+    'assets/scss/style.scss',
+    'bootstrap/dist/css/bootstrap.min.css'
+  ],
+  app: {
+    head: {
+      title: 'To-Do List',
+      htmlAttrs: {
+        lang: 'en'
       },
-    },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: '' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      ]
+    }
   },
-
-  plugins: ["@/plugins/bootstrap.client.ts"],
-
-  runtimeConfig: {
-    public: {
-      baseApiUrl: process.env.NUXT_BASE_API_URL || "",
-    },
-  },
-  compatibilityDate: "2024-07-06",
-};
+  plugins: [],
+  components: true,
+  modules: [],
+  build: {},
+  
+})

@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-  <div class="container p-5">
+  <div class="container">
     <slot></slot>
   </div>
 </template>
