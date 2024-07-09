@@ -1,0 +1,12 @@
+// app.scss
+@import 'variables';
+@import '/node_modules/bootstrap/scss/bootstrap.scss';
+
+.btn-my-custom-color {
+  background-color: $my-custom-color;
+  color: #000000;
+
+  &:hover {
+    background-color: darken($my-custom-color, 10%);
+  }
+}
