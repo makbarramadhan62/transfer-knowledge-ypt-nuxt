@@ -183,21 +183,3 @@ const goToPage = (page: number) => {
   }
 };
 </script>
-
-<style scoped>
-.modal.d-block {
-  display: block !important;
-}
-.table th,
-.table td {
-  width: 40%;
-}
-.table th:nth-child(2),
-.table td:nth-child(2) {
-  width: 20%;
-}
-.pagination .page-link {
-  outline: none !important;
-  box-shadow: none !important;
-}
-</style>
