@@ -10,16 +10,13 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxtjs/style-resources": "^1.2.2",
-    "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
-    "bootstrap-vue": "^2.23.1",
     "nuxt": "^3.12.3",
-    "sass": "^1.77.6",
-    "sass-loader": "^14.2.1",
+    "usebootstrap": "^3.5.12",
     "vue": "latest"
   },
   "devDependencies": {
-    "@types/bootstrap": "^5.2.10"
+    "sass": "^1.77.6",
+    "sass-loader": "^14.2.1"
   }
 }
