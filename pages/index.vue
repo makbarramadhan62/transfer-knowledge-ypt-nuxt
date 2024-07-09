@@ -129,9 +129,10 @@ const openAddTaskModal = () => {
 };
 
 const openEditTaskModal = (index: number) => {
-  currentTaskIndex.value = index;
-  taskTitle.value = tasks.value[index].title;
-  taskStatus.value = tasks.value[index].status;
+  const fullIndex = tasks.value.findIndex(task => task.title === paginatedTasks.value[index].title && task.status === paginatedTasks.value[index].status);
+  currentTaskIndex.value = fullIndex;
+  taskTitle.value = tasks.value[fullIndex].title;
+  taskStatus.value = tasks.value[fullIndex].status;
   isEditing.value = true;
   isModalOpen.value = true;
   error.value = '';
@@ -172,7 +173,8 @@ const editTask = () => {
 };
 
 const removeTask = (index: number) => {
-  tasks.value.splice(index, 1);
+  const fullIndex = tasks.value.findIndex(task => task.title === paginatedTasks.value[index].title && task.status === paginatedTasks.value[index].status);
+  tasks.value.splice(fullIndex, 1);
 };
 
 const filterTasks = (status: string) => {
